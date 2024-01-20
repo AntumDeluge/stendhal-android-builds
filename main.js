@@ -2,6 +2,8 @@
 "use strict"
 
 const releases = [
+	"20240119",
+	"20240119-debug"
 ];
 
 window.onload = function() {

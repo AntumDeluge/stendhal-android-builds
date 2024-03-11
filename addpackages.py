@@ -73,11 +73,16 @@ def writePackageList(packages):
       insert_index = idx
     lines_out.append(li)
 
+  basename = "org.stendhalgame.client"
   pcount = len(packages)
   for idx in range(pcount):
     package = packages[idx]
+    if not package.startswith(basename):
+      print("ERROR: malformed package name: {}".format(package));
+      continue
+
     insert_index += 1
-    li = "\t\"{}\"".format(package[17:package.index(".apk")])
+    li = "\t\"{}\"".format(package[len(basename)+1:package.index(".apk")])
     if idx < pcount - 1:
       li += ","
     lines_out.insert(insert_index, li)

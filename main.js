@@ -9,7 +9,7 @@ const releases = [
 window.onload = function() {
 	const release_list = document.getElementById("releases");
 	for (const release of releases) {
-		const basename = "stendhal-webview-" + release + ".apk";
+		const basename = "org.stendhalgame.client-" + release + ".apk";
 		const anchor = document.createElement("a");
 		anchor.href = "dist/" + basename;
 		anchor.innerText = basename;
